@@ -1,0 +1,418 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - deny
+  - restart
+  - bot_challenge
+  - small-duration
+  - long-duration
+  - age-below-18
+  - age-above-18
+  - problem_headache
+  - problem_cough
+  - problem_nasal-blockage
+  - problem_common-cold
+  - problem_conjunctivits
+  - problem_gerd
+  - problem_diabetes
+  - problem_fungal-infection
+  - problem_chickenpox
+  - problem_typhoid
+  - problem_psoriasis
+  - problem_obesity
+  - problem_insomnia
+  - problem_psychosis
+  - problem_depression
+  - problem_pneumonia
+  - problem_bronchial-asthma
+  - problem_low-blood-pressure
+  - problem_high-blood-pressure
+  - problem_ringworm
+  - problem_toothache
+  - problem_migraine
+  - problem_arthritis
+  - problem_period-cramps
+  - problem_vit-d-deficiency
+  - problem_anaemia
+  - problem_weakness
+  - problem_eye-problem
+  - problem_ear-pain
+  - problem_night-blindness
+  - problem_mild-heart-disease
+  - problem_coronavirus
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_anything-else
+  - utter_ask-cold
+  - utter_ask-nasal-blockage
+  - utter_ask-duration
+  - utter_ask-age
+  - utter_visit-doctor
+  - utter_headache-a
+  - utter_headache-b
+  - utter_headache-advice
+  - utter_nasal-blockage-a
+  - utter_nasal-blockage-b
+  - utter_nasal-blockage-advice
+  - utter_cough-a
+  - utter_cough-b
+  - utter_cough-advice
+  - utter_common-cold-a
+  - utter_common-cold-b
+  - utter_common-cold-advice
+  - utter_low-blood-pressure-a
+  - utter_low-blood-pressure-b
+  - utter_low-blood-pressure-advice
+  - utter_high-blood-pressure-a
+  - utter_high-blood-pressure-b
+  - utter_high-blood-pressure-advice
+  - utter_ringworm-a
+  - utter_ringworm-b
+  - utter_ringworm-advice
+  - utter_toothache-a
+  - utter_toothache-b
+  - utter_toothache-advice
+  - utter_migraine-a
+  - utter_migraine-b
+  - utter_migraine-advice
+  - utter_conjunctivits-a
+  - utter_conjunctivits-b
+  - utter_conjunctivits-advice
+  - utter_gerd-a
+  - utter_gerd-b
+  - utter_gerd-advice
+  - utter_diabetes-a
+  - utter_diabetes-b
+  - utter_diabetes-advice
+  - utter_fungal-infection-a
+  - utter_fungal-infection-b
+  - utter_fungal-infection-advice
+  - utter_chickenpox-a
+  - utter_chickenpox-b
+  - utter_chickenpox-advice
+  - utter_typhoid-a
+  - utter_typhoid-b
+  - utter_typhoid-advice
+  - utter_psoriasis-a
+  - utter_psoriasis-b
+  - utter_psoriasis-advice
+  - utter_insomnia-a
+  - utter_insomnia-b
+  - utter_insomnia-advice
+  - utter_psychosis-a
+  - utter_psychosis-b
+  - utter_psychosis-advice
+  - utter_obesity-a
+  - utter_obesity-b
+  - utter_obesity-advice
+  - utter_depression-a
+  - utter_depression-b
+  - utter_depression-advice
+  - utter_pneumonia-a
+  - utter_pneumonia-b
+  - utter_pneumonia-advice
+  - utter_bronchial-asthma-a
+  - utter_bronchial-asthma-b
+  - utter_bronchial-asthma-advice
+  - utter_arthritis-a
+  - utter_arthritis-b
+  - utter_arthritis-advice
+  - utter_period-cramps-a
+  - utter_period-cramps-b
+  - utter_period-cramps-advice
+  - utter_anaemia-a
+  - utter_anaemia-b
+  - utter_anaemia-advice
+  - utter_weakness-a
+  - utter_weakness-b
+  - utter_weakness-advice
+  - utter_eye-problem-a
+  - utter_eye-problem-b
+  - utter_eye-problem-advice
+  - utter_ear-pain-a
+  - utter_ear-pain-b
+  - utter_ear-pain-advice
+  - utter_night-blindness-a
+  - utter_night-blindness-b
+  - utter_night-blindness-advice
+  - utter_mild-heart-disease-a
+  - utter_mild-heart-disease-b
+  - utter_mild-heart-disease-advice
+  - utter_vit-d-deficiency-a
+  - utter_vit-d-deficiency-b
+  - utter_vit-d-deficiency-advice
+  - utter_coronavirus-advice
+
+
+responses:
+
+  utter_greet:
+  - text: "MediBot🤖 is happy to help you:)<br>Tell me what are your symptoms.<br><br>👤"
+
+  utter_goodbye:
+    - text: "<br>🤖<br>Goodbye! Have a good day."
+
+  utter_iamabot:
+  - text: "<br>🤖<br>I am a healthcare assistant chatbot, powered by RASA.<br><br>👤"
+
+  utter_anything-else:
+  - text: "🤖<br>Is there any other Symptoms/Disease that I can help you with(Reply with yes/no)?.<br><br>👤"
+    buttons:
+    - title: "YES"
+      payload: /greet
+    - title: "NO"
+      payload: /noo
+
+  utter_ask-cold:
+  - text: "<br>🤖<br>Are you feeling cold?.<br><br>👤"
+
+  utter_ask-nasal-blockage:
+  - text: "<br>🤖<br>Do you have nasal Blockage?.<br><br>👤"
+
+  utter_ask-duration:
+  - text: "<br>🤖<br>Duration of your prevailing symptoms(Reply in words only).<br><br>👤"
+    buttons:
+    - title: "Less than 3 days"
+      payload: /small-duration
+    - title: "3 days or more"
+      payload: /long-duration
+
+
+  utter_ask-age:
+  - text: "<br>🤖<br>Which age group you belong too(below 18 or above 18).<br><br>👤"
+    buttons:
+    - title: "below 18"
+      payload: /age-below-18
+    - title: "above 18"
+      payload: /age-above-18
+
+  utter_visit-doctor:
+  - text: "<br>🤖<br>For longer duration of symptoms, please visit a doctor."
+
+  utter_headache-b:
+  - text: "<br>🤖<br>Take a 100mg dosage of Crocin Pain Relief for headache.<br>"
+  utter_headache-a:
+  - text: "<br>🤖<br>Take a 500mg dosage of Crocin Pain Relief for headache.<br>"
+  utter_headache-advice:
+  - text: "Try to relax, drink plenty of water, get rest, try cold pack.<br>"
+  
+  utter_nasal-blockage-a:
+  - text: "<br>🤖<br>You have nasal-blockage. You should use nasivion nasal spray when your nose is blocked.<br>"
+  utter_nasal-blockage-b:
+  - text: "<br>🤖<br>You have nasal-blockage. You should use nasivion nasal spray when your nose is blocked.<br>"
+  utter_nasal-blockage-advice:
+  - text: "Use steam vapourizer and avoid cold baths.<br>"
+
+  utter_cough-b:
+  - text: "<br>🤖<br>You have cough. You should take 5mL dosage of Benadryl Syrup when you get cough.<br>"
+  utter_cough-a:
+  - text: "<br>🤖<br>You have cough. You should take 10mL dosage of Benadryl Syrup when you get cough.<br>"
+  utter_cough-advice:
+  - text: "Drink ginger tea or honey tea to avoid cough.<br>"
+
+  utter_common-cold-b:
+  - text: "<br>🤖<br>You have a cold. You should take a 5mg dosage of Cetrizine after your dinner.<br>"
+  utter_common-cold-a:
+  - text: "<br>🤖<br>You have a cold. You should take a 10mg dosage of Cetrizine after your dinner.<br>"
+  utter_common-cold-advice:
+  - text: "Stay hydrated. Water, Warm lemon water with honey helps loosen congestion and prevents dehydration.<br>"
+
+  utter_low-blood-pressure-b:
+  - text: "<br>🤖<br>You have low BP. You should take 7mg dosage of  midodrine (Orvaten) for every 8 hours, it helps to narrow blood vessels to raise blood pressure.<br>" 
+  utter_low-blood-pressure-a:
+  - text: "<br>🤖<br>You have low BP. You should take 10mg dosage of midodrine (Orvaten) for every 8 hours, it helps to narrow blood vessels to raise blood pressure.<br>"
+  utter_low-blood-pressure-advice:
+  - text: "Drink plenty of water, eat a balanced diet, eat smaller meals, avoid alcohol, check your blood sugar several times a day consult doctor incase of emergency.<br>"
+
+  utter_high-blood-pressure-b:
+  - text: "<br>🤖<br>You have high BP. You should take 5mg dosage of Lisinopril (Prinivil, Zestril). Take it after having lunch.<br>"
+  utter_high-blood-pressure-a:
+  - text: "<br>🤖<br>You have high BP. You should take 10mg dosage of Lisinopril (Prinivil, Zestril). Take it after having lunch.<br>"
+  utter_high-blood-pressure-advice:
+  - text: "Exercise regularly, loose extra weight, eat a healthy diet, reduce sodium in your diet, quit smoking, limit or avoid alcohol consumption.<br>"
+
+  utter_ringworm-a:
+  - text: "<br>🤖<br>You have ringworm. You should apply lotrimin ointment on the infected area.<br>"
+  utter_ringworm-b:
+  - text: "<br>🤖<br>You have ringworm. You should apply lotrimin ointment on the infected area.<br>"
+  utter_ringworm-advice:
+  - text: "Wash the infected area regularly. Do not use wet clothes.<br>"
+
+  utter_toothache-a:
+  - text: "<br>🤖<br>You have toothache. You should take one tablet of Diclofenac when you get pain, do visit a dentist.<br>"
+  utter_toothache-b:
+  - text: "<br>🤖<br>You have toothache. You should take one tablet of Diclofenac when you get pain, do visit a dentist.<br>"
+  utter_toothache-advice:
+  - text: "Rinse your mouth with warm water. Use dental floss to remove any food particles or plaque wedged between your teeth.<br>"
+
+  utter_migraine-b:
+  - text: "<br>🤖<br>You have migraine. You should take 25mg dosage of sumatriptan when you get pain.<br>"
+  utter_migraine-a:
+  - text: "<br>🤖<br>You have migraine. You should take 50mg dosage of sumatriptan when you get pain.<br>"
+  utter_migraine-advice:
+  - text: "Try a cold pack, get some caffeine and practice relaxation.<br>"
+
+  utter_conjunctivits-b:
+  - text : "<br>🤖<br>You have conjunctivitis. Take gatifloxacin (Zymaxid) 2 drops twice a day.<br>"
+  utter_conjunctivits-a:
+  - text : "<br>🤖<br>You have conjunctivitis. Take ciprofloxacin 2 drops thrice a day.<br>"
+  utter_conjunctivits-advice:
+  - text : "Avoiding contact with infected people, disinfection of household surfaces, and good hygienic practices.<br>"
+
+  utter_gerd-a:
+  - text : "<br>🤖<br>You have gerd. Take antacids to reduce pepsids. Take PPIs eg esomeprazole (Nexium) omeprazole (Prilosec) lansoprazole (Prevacid) for long terms 2 dozes daily.<br>" 
+  utter_gerd-b:
+  - text : "<br>🤖<br>You have gerd. Take famotidine (Pepcid) and nizatidine 10mg tablets twice a day.<br>"
+  utter_gerd-advice:
+  - text : "If not taken care by medications, consult for surgery like LINX or TIF.<br>"
+
+  utter_diabetes-a:
+  - text : "<br>🤖<br>You have diabetes. Take 5-6 mg dozes of metformin (Glumetza, others), liraglutide (Victoza) and insulin daily basis, do visit a doctor.<br>"
+  utter_diabetes-b: 
+  - text : "<br>🤖<br>You have diabetes. Take 2-5mg of glimepiride (Amaryl), glimepiride-pioglitazone (Duetact) dozes daily, do visit a doctor.<br>"
+  utter_diabetes-advice: 
+  - text : "Choose healthier carbohydrates, Eat less salt, Eat more fruits, Cut down sugar.<br>"
+
+  utter_fungal-infection-a:
+  - text : "<br>🤖<br>You have fungal infection. Take 5-10mg of 1% cream Terbinafine 1 or 2 times a day, or nystalin ointment once a day.<br>"
+  utter_fungal-infection-b: 
+  - text : "<br>🤖<br>You have fungal infection. Have 1-2 dozes of any of clotrimazole, econazole, ketoconazole.<br>"
+  utter_fungal-infection-advice: 
+  - text : "Keep the affected area clean and dry. wearing loose-fitting clothing or shoes that allow your skin to breathe.<br>"
+
+  utter_chickenpox-a: 
+  - text : "<br>🤖<br>You have chickenpox. Take 10mg tablets daily acyclovir eg Sitavig 1doze daily.<br>"
+  utter_chickenpox-b: 
+  - text : "<br>🤖<br>You have chickenpox. Take 5mg tablets of Zovirax, apply calamine lotion 2mg daily.<br>"
+  utter_chickenpox-advice: 
+  - text : "Wear mittens to prevent scratching, Take baking soda baths, Use chamomile compresses, Have approved pain relievers.<br>"
+
+  utter_typhoid-a: 
+  - text : "<br>🤖<br>You have typhoid. azithromycin given for 7 days at a dosage of 10 mg/kg/day, maximum 500mg a day.<br>"
+  utter_typhoid-b: 
+  - text : "<br>🤖<br>You have typhoid. Take 2-3mg tablets Ciprofloxacin (Cipro), Azithromycin (Zithromax) or Ceftriaxone on daily basis a little amount.<br>"
+  utter_typhoid-advice: 
+  - text : "Take antibiotic, drinking adequate water. Consult a doctor"
+
+  utter_psoriasis-b: 
+  - text : "<br>🤖<br>You have psoriasis. Take 2-3mg dozes Anthralin.<br>"
+  utter_psoriasis-a: 
+  - text : "<br>🤖<br>You have psoriasis. Have Calcipotriene (a form of vitamin D) 10mg daily.<br>"
+  utter_psoriasis-advice: 
+  - text : "You can apply cream, lotion, or ointments. use cream with clobetasol.<br>"
+
+  utter_obesity-a: 
+  - text : "<br>🤖<br>You have obesity. Orlistat is most used medicine with 10-15mg dozes daily, do visit a doctor.<br>"
+  utter_obesity-b: 
+  - text : "<br>🤖<br>You have obesity. Take Orlistat (Alli, Xenical) Phentermine and topiramate (Qsymia), Bupropion and naltrexone (Contrave), Liraglutide (Saxenda, Victoza) 1doze daily, do visit a doctor.<br>"
+  utter_obesity-advice: 
+  - text : "Do exercise and yoga(Recommended). Have medications and consult for weight loss surgery.<br>" 
+
+  utter_insomnia-b: 
+  - text : "<br>🤖<br>You have insomnia. Take Antihistamines like diphenhydramine (Nytol, Sominex) of 2-3mg, 2doze daily.<br>"
+  utter_insomnia-a: 
+  - text : "<br>🤖<br>You have insomnia. Have 3.75mg dozes daily of sleeping pills.<br>" 
+  utter_insomnia-advice: 
+  - text : "Wake up at the same time, Limit naps, Eliminate alcohol.<br>" 
+
+  utter_psychosis-a: 
+  - text : "<br>🤖<br>You have psychosis. Take atypical mild 1-2 dozes antipsychotics, which include aripiprazole (Abilify), asenapine (Saphris), clozapine (Clozaril) 4mg daily.<br>" 
+  utter_psychosis-b: 
+  - text : "<br>🤖<br>You have psychosis. Have 2-3mg dozes Antipsychotic drugs like olanzapine and risperidone 10mg dozes daily.<br>"
+  utter_psychosis-advice: 
+  - text : "Don't panic or overreact, Do listen non-judgmentally.<br>"
+
+  utter_depression-b: 
+  - text : "<br>🤖<br>You have depression. Take 15-20mg of fluoxetine (Prozacâ„¢) is most effective, with 5mg dozes daily basis.<br>"
+  utter_depression-a: 
+  - text : "<br>🤖<br>You have depression. Take 1tablet of sertraline (Zoloft), fluoxetine (Prozac, Sarafem), citalopram (Celexa) 10-15mg dozes daily.<br>"
+  utter_depression-advice: 
+  - text : "Blend of cognitive behavioral therapy, interpersonal therapy, and psychodynamic therapy can be used.<br>" 
+
+  utter_pneumonia-a: 
+  - text : "<br>🤖<br>You have pneumonia. Take Beta-lactam antibiotics (eg, amoxicillin, cefuroxime, cefdinir) 10-15mg daily.<br>" 
+  utter_pneumonia-b: 
+  - text : "<br>🤖<br>You have pneumonia. Take 10-12mg dozes daily Macrolides include azithromycin (ZithromaxÂ®) and clarithromycin (BiaxinÂ®).<br>"
+  utter_pneumonia-advice: 
+  - text : "You can try  amoxicillin, azithromycin, or fluoroquinolones too.<br>"
+
+  utter_coronavirus-advice:
+  - text: "<br>🤖<br>You have symptopms of covid-19.<br>Reach out to your nearest hostpital and get checked for covid-19. Maintain distance of atleast 6ft from others.<br>"
+
+  utter_bronchial-asthma-a:
+  - text: "<br>🤖<br>You have bronchial asthma. Inhale Albuterol, USP Inhalation Aerosol when you are going to be around asthma triggers. Do visit a doctor.<br>"
+  utter_bronchial-asthma-b:
+  - text: "<br>🤖<br>You have bronchial asthma. Inhale Albuterol, USP Inhalation Aerosol when you are going to be around asthma triggers. Do visit a doctor.<br>"
+  utter_bronchial-asthma-advice:
+  - text: "Keep fit by exercising. Be in control, get an asthma action plan. Avoid smoking. Prevent Cold.<br>"
+
+  utter_arthritis-a:
+  - text: "<br>🤖<br>You have arthritis.Take one pill of Rinvoq(15 mg tablet) daily . Do visit a doctor.<br>"
+  utter_arthritis-b:
+  - text: "<br>🤖<br>You have arthritis.Take one pill of Rinvoq(15 mg tablet) daily . Do visit a doctor.<br>"
+  utter_arthritis-advice:
+  - text: "Manage your weight. Use hot and cold therapy. Use meditation to cope with pain. Add turmeric to dishes.<br>"
+
+  utter_period-cramps-a:
+  - text: "<br>🤖<br>Take ibuprofen tablet at regular doses starting the day before you expect your period to begin.<br>"
+  utter_period-cramps-b:
+  - text: "<br>🤖<br>Take ibuprofen tablet at regular doses starting the day before you expect your period to begin.<br>"
+  utter_period-cramps-advice:
+  - text: "Keep a warm heating pad on belly. Do yoga for period cramps.<br>"
+ 
+  utter_anaemia-b:
+  - text: "<br>🤖<br>You have anaemia, Please take Lupinfer 50mg twice daily after food and take dexorange syrup twice daily.<br>"
+  utter_anaemia-a:
+  - text: "<br>🤖<br>You have anaemia, Please take Lupinfer 100mg twice daily after food and take dexorange syrup twice daily.<br>"
+  utter_anaemia-advice:
+  - text: "Eat healthy food, check haemoglobin level in every six month.<br>"
+ 
+  utter_weakness-b:
+  - text: "<br>🤖<br>Take a multi-vitamin syrup once a day, check your haemoglobin level, if necessary visit a doctor.<br>"
+  utter_weakness-a:
+  - text: "<br>🤖<br>Take a multi-vitamin capsule twice a day, check your haemoglobin level, if necessary visit a doctor.<br>"
+  utter_weakness-advice:
+  - text: "Have a balanced diet, do yoga in the morning, get proper sleep.<br>"
+
+  utter_eye-problem-b:
+  - text: "<br>🤖<br>Lower your screen time and immediatly get your eyes tested.<br>" 
+  utter_eye-problem-a:
+  - text: "<br>🤖<br>Lower your screen time and immediatly get your eyes tested, use itone eye drop twice a day.<br>"
+  utter_eye-problem-advice:
+  - text: "Do not spend much screen time, wash eyes frequently with clean water, do some yoga for eyes.<br>"
+
+  utter_ear-pain-a:
+  - text: "<br>🤖<br>Do not use earphones for longer time, if it's bleeding go to a doctor.<br>"
+  utter_ear-pain-b:
+  - text: "<br>🤖<br>Do not use earphones for longer time, you may use otovin ear drop. If pains a lot, take one aspirin tablet, if it's bleeding go to a doctor.<br>"
+  utter_ear-pain-advice:
+  - text: "Use less earphone, use a warm, moist compress on the ear.<br>"
+
+  utter_night-blindness-b:
+  - text: "<br>🤖<br>You have symptoms of night Blindness. Take aquasol A once a day for one month.<br>"
+  utter_night-blindness-a:
+  - text: "<br>🤖<br>You have symptoms of night Blindness. Take aquasol A twice daily for one month.<br>"
+  utter_night-blindness-advice:
+  - text: "Eat vitamin A-rich foods including dark green leafy vegetables, carrots, potatoes, dairy products, broccoli, squash, and fish.<br>"
+ 
+  utter_mild-heart-disease-b:
+  - text: "<br>🤖<br>Take one aspirin tablet quickly and go to the nearest hospital.<br>"
+  utter_mild-heart-disease-a:
+  - text: "<br>🤖<br>Take one aspirin tablet quickly and go to the nearest hospital as soon as possible.<br>"
+  utter_mild-heart-disease-advice:
+  - text: "You have heart disease, Stop smoking, control blood pressure, control cholesterol levels, check for diabetes, eat a heart-healthy diet, control your stress level.<br>"
+ 
+  utter_vit-d-deficiency-a:
+  - text: "<br>🤖<br>you have vitaminD deficeincy. You should take vitamin D tablet once a week.<br>"
+  utter_vit-d-deficiency-b:
+  - text: "<br>🤖<br>you have vitaminD deficeincy. You should take vitamin D tablet once a week.<br>"
+  utter_vit-d-deficiency-advice:
+  - text: "Please get sunlight for at least half an hour day to get proper vitamin D.<br>"
+
+session_config:
+  session_expiration_time: 60   #value in minutes
+  carry_over_slots_to_new_session: true
