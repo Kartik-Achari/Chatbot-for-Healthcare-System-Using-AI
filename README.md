@@ -105,3 +105,8 @@ After sucessfully running rasa and flask server
 **Visual Studio Code**
 
 **Anaconda**
+
+
+## Images:
+*****************
+![web_app_implementation(1)](https://user-images.githubusercontent.com/114933781/207016061-d7502857-3ef2-4be3-965f-305f9b9bdac7.png)
