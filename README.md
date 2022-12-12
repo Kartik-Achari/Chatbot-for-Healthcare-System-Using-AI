@@ -110,3 +110,5 @@ After sucessfully running rasa and flask server
 ## Images:
 *****************
 ![web_app_implementation(1)](https://user-images.githubusercontent.com/114933781/207016061-d7502857-3ef2-4be3-965f-305f9b9bdac7.png)
+![web_app_implementation(2)](https://user-images.githubusercontent.com/114933781/207016352-ff97e606-64d7-4329-9514-9b4f26de88b2.png)
+
